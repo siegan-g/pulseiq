@@ -17,4 +17,20 @@
 python -m venv venv
 ```
 
+- Activate the virtual environment with the below
+```
+source /venv/bin/activate
+```
 
+- or on Windows
+
+```
+./venv/bin/activate
+```
+- if you are on Arch Linux and are having environment issues install the package `python-virtualenv` and create the venv with `virtualenv venv`
+
+
+- Install dependencies with the below:
+```
+pip install -r requirements.txt
+```
