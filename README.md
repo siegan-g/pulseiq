@@ -5,3 +5,10 @@ Front-end dashboard (React + recharts) displaying live charts: volume, latency, 
 A predictive ML component that forecasts spikes or failure risks 5–10 minutes ahead
 
 During Q&A, be ready to discuss data-pipeline resilience, thresholds for auto-scaling, and how PulseIQ helps ops teams prevent outages.
+
+
+- Couchebase account 
+
+
+- Exisitng ML Models
+    - 
