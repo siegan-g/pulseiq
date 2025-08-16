@@ -34,5 +34,5 @@ class TransactionService:
                 raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
         
     def start_server(self):
-        uvicorn.run(self.webserver,host="0.0.0.0",port=3000)
+        uvicorn.run(self.webserver,host="0.0.0.0",port=8000)
             
