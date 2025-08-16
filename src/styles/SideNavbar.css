@@ -1,0 +1,91 @@
+.sidebar {
+  position: relative; 
+  height: 100vh;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  transition: width 0.3s ease-in-out;
+  overflow: visible;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  flex-shrink: 0;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.toggle-button {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20%;
+}
+
+.icon {
+  color: white;
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar li:hover {
+  background-color: #555;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-logo {
+  width: 120px;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .sidebar-logo {
+  width: 60px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu .dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.submenu li {
+  padding: 5px 0;
+  font-size: 0.9em;
+}
+
