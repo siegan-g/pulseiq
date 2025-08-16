@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import Field
-from repository import PulseEntity
+from .repository import PulseEntity
 
 
 class Merchant(PulseEntity):
