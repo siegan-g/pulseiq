@@ -67,6 +67,8 @@ const styles = {
   tagline: {
     marginTop: '2rem',
     color: '#95a318ff',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
   },
 };
 

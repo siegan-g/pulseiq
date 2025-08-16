@@ -16,6 +16,18 @@
   width: 80px;
 }
 
+.menu-link {
+  color: rgb(55, 172, 90);
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+}
+
+.menu-link:hover {
+  text-decoration: underline;
+}
+
+
 .toggle-button {
   position: absolute;
   bottom: 70px;

@@ -3,6 +3,7 @@ import '../styles/SideNavbar.css';
 import { FaAnglesRight, FaAnglesLeft } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // for dropdown arrow
 import PulseIQ from '../assets/PulseIQ.png';
+import { Link } from 'react-router-dom';
 
 function Sidebar({ collapsed, setCollapsed }) {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
@@ -26,7 +27,9 @@ function Sidebar({ collapsed, setCollapsed }) {
       </button>
 
       <ul className="menu">
-        <li>Home</li>
+        <li>
+          <Link to="/" className="menu-link">Home</Link>
+        </li>
 
         <li onClick={toggleServicesDropdown} className="dropdown-toggle">
           Services
@@ -35,13 +38,24 @@ function Sidebar({ collapsed, setCollapsed }) {
 
         {!collapsed && showServicesDropdown && (
           <ul className="submenu">
-            <li>Throughput</li>
-            <li>Latency</li>
-            <li>Uptime</li>
+            <li>
+              <Link to="/transactions-throughput" className="menu-link">Transaction Throughput</Link>
+            </li>
+            <li>
+              <Link to="/latency" className="menu-link">Latency</Link>
+            </li>
+            <li>
+              <Link to="/uptime-availability" className="menu-link">Uptime Availability</Link>
+            </li>
           </ul>
         )}
 
-        <li>Metrics</li>
+        <li>
+          <Link to="/about" className="menu-link">About</Link>
+        </li>
+        <li>
+          <Link to="/contact" className="menu-link">Contact</Link>
+        </li>
       </ul>
     </div>
   );
