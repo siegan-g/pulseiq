@@ -8,6 +8,7 @@ class PulseEntity(BaseModel):
     """
     id: Optional[str | int] = Field(None, description="Entity ID")
 
+
 T = TypeVar("T",bound=PulseEntity)
 class GenericRepository(Generic[T],ABC):
 
