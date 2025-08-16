@@ -18,7 +18,6 @@ class TransactionService:
         if token != "Bearer testpulseiqtoken":
             raise HTTPException(status_code=401, detail="Invalid token",headers={})
         
-
     def setup_routes(self):
         @self.webserver.get("/transact/health")
         def health():
@@ -27,7 +26,7 @@ class TransactionService:
         @self.webserver.post("/transact")
         async def create(transaction: Transaction, token: str = Depends(self.verify_token)):
             try:
-                strategy = self.factory.create(transaction)
+                strategy = self.factory.create()
                 response = strategy.send(transaction)
                 return {"status": 200,"destination":response ,"transaction": transaction.model_dump_json}
             except Exception as e:
