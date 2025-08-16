@@ -6,7 +6,7 @@ class PulseEntity(BaseModel):
     """
     The Base Entity for any Model in PulseIQ
     """
-    id: Optional[int] = Field()
+    id: int|str = Field(...,description="Unique Id")
 
 T = TypeVar("T",bound=PulseEntity)
 class GenericRepository(Generic[T],ABC):
