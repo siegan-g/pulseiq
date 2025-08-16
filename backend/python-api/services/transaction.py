@@ -15,7 +15,7 @@ class TransactionService:
         verify token in request in valid
         """
         token = request.headers.get("Authorization")
-        if token != "testpulseiqtoken":
+        if token != "Bearer testpulseiqtoken":
             raise HTTPException(status_code=401, detail="Invalid token",headers={})
         
 
@@ -25,13 +25,14 @@ class TransactionService:
             return {"status":"I'm Alive!"}
 
         @self.webserver.post("/transact")
-        async def create(transaction:Transaction,token:str=Depends(self.verify_token)):
+        async def create(transaction: Transaction, token: str = Depends(self.verify_token)):
             try:
-                # request_body = await.request.json()
                 strategy = self.factory.create(transaction)
-                response = strategy.send()
+                response = strategy.send(transaction)
+                return {"status": 200,"destination":response ,"transaction": transaction.model_dump_json}
             except Exception as e:
-                pass
+                print(f"Error processing transaction: {e}")
+                raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
         
     def start_server(self):
         uvicorn.run(self.webserver,host="0.0.0.0",port=3000)
